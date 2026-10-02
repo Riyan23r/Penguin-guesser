@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Penguin Name Challenge 🐧</title>
 
-<link rel="icon" type="image/png" href="icon-512.png">
+<title>Penguin Name Challenge 🐧</title>
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#071522">
+
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -40,9 +45,11 @@ body {
     width: 100vw;
     height: 100vh;
     flex-shrink: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
     overflow-y: auto;
 }
@@ -51,11 +58,14 @@ body {
     width: min(900px, 95%);
     max-height: 92vh;
     overflow-y: auto;
+
     background: #102536;
     border: 2px solid #24465d;
     border-radius: 25px;
+
     padding: 30px;
     text-align: center;
+
     box-shadow: 0 15px 40px rgba(0,0,0,.35);
 }
 
@@ -78,25 +88,33 @@ p {
 .penguin {
     font-size: 90px;
     margin: 10px;
+
     animation: float 2s infinite ease-in-out;
 }
 
 @keyframes float {
+
     50% {
         transform: translateY(-10px);
     }
+
 }
 
 button {
     border: none;
     border-radius: 14px;
+
     padding: 14px 25px;
     margin: 8px;
+
     font-size: 17px;
     font-weight: bold;
+
     cursor: pointer;
+
     background: #1e90ff;
     color: white;
+
     transition: .2s;
 }
 
@@ -129,199 +147,347 @@ button:active {
     background: #8e44ad;
 }
 
+
+/* LEVEL BUTTONS */
+
 .level-grid {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 15px;
+
     margin-top: 25px;
 }
 
 .level {
+
     min-height: 130px;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
+
+    text-align: center;
+
     border-radius: 20px;
+
     font-size: 25px;
+
+    width: 100%;
 }
 
 .level small {
+
+    display: block;
+
     font-size: 14px;
+
     margin-top: 8px;
+
+    text-align: center;
+
+    width: 100%;
 }
 
+
+/* STATS */
+
 .stats {
+
     display: flex;
-    justify-content: space-around;
+
+    justify-content: center;
+
     gap: 10px;
+
     margin: 15px 0;
+
     flex-wrap: wrap;
 }
 
 .stat {
+
     background: #193447;
+
     padding: 10px 20px;
+
     border-radius: 12px;
 }
 
+
+/* QUIZ IMAGE */
+
 .quiz-image {
+
     width: min(520px, 100%);
+
     height: 300px;
+
     object-fit: contain;
+
     border-radius: 20px;
+
     margin: 15px auto;
+
     display: block;
+
     background: #071522;
 }
 
+
+/* INPUT */
+
 input {
+
     width: min(600px, 100%);
+
     padding: 16px;
+
     border-radius: 13px;
+
     border: 2px solid #35566b;
+
     background: #071522;
+
     color: white;
+
     font-size: 18px;
+
     outline: none;
 }
 
 input:focus {
+
     border-color: #1e90ff;
+
 }
 
+
+/* FEEDBACK */
+
 .feedback {
+
     min-height: 30px;
+
     margin: 12px;
+
     font-weight: bold;
+
     font-size: 18px;
 }
 
 .hint {
+
     color: #ffd166;
+
     min-height: 30px;
 }
 
+
+/* INFO */
+
 .info-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(180px, 1fr));
+
     gap: 15px;
+
     margin-top: 20px;
 }
 
 .info-box {
+
     background: #193447;
+
     padding: 20px;
+
     border-radius: 18px;
 }
 
+
+/* ENCYCLOPEDIA */
+
 .encyclopedia {
+
     max-height: 60vh;
+
     overflow-y: auto;
 }
 
 .penguin-entry {
+
     display: flex;
+
     align-items: center;
+
     gap: 15px;
+
     background: #193447;
+
     padding: 15px;
+
     margin: 10px 0;
+
     border-radius: 15px;
+
     cursor: pointer;
+
     transition: .2s;
+
     text-align: left;
 }
 
 .penguin-entry:hover {
+
     background: #21465d;
+
     transform: translateX(5px);
 }
 
 .penguin-entry img {
+
     width: 120px;
+
     height: 90px;
+
     object-fit: cover;
+
     border-radius: 10px;
+
     background: #071522;
+
 }
 
 .penguin-entry p {
+
     font-size: 14px;
 }
 
+
+/* ACHIEVEMENTS */
+
 .achievement {
+
     padding: 15px;
+
     margin: 10px 0;
+
     border-radius: 15px;
+
     background: #193447;
+
     text-align: left;
 }
 
 .unlocked {
+
     border: 2px solid #27ae60;
 }
 
+
+/* RESULTS */
+
 .result-score {
+
     font-size: 65px;
+
     font-weight: bold;
+
     margin: 20px;
 }
 
+
+/* NAVIGATION */
+
 .nav {
+
     position: fixed;
+
     bottom: 15px;
+
     left: 50%;
+
     transform: translateX(-50%);
+
     z-index: 20;
+
     background: rgba(10,25,38,.95);
+
     padding: 8px;
+
     border-radius: 20px;
+
     display: flex;
+
     gap: 5px;
 }
 
 .nav button {
+
     padding: 10px 15px;
+
     margin: 0;
+
     font-size: 14px;
 }
 
+
+/* LOADING */
+
 .loading {
+
     color: #8fc9ff;
+
     padding: 30px;
 }
 
-.hidden {
-    display: none;
-}
+
+/* MOBILE */
 
 @media(max-width:600px) {
 
     .card {
+
         padding: 20px;
     }
 
     .level-grid {
+
         grid-template-columns: 1fr;
     }
 
     .quiz-image {
+
         height: 220px;
     }
 
     .penguin-entry img {
+
         width: 90px;
+
         height: 70px;
     }
 
     .nav button {
+
         padding: 8px 10px;
+
         font-size: 12px;
     }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
@@ -329,14 +495,20 @@ input:focus {
 
 <div class="slides" id="slides">
 
+
 <!-- ================= HOME ================= -->
 
-<section class="slide" id="homePage">
+<section class="slide">
+
 <div class="card">
 
-<div class="penguin">🐧</div>
+<div class="penguin">
+🐧
+</div>
 
-<h1>Penguin Name Challenge</h1>
+<h1>
+Penguin Name Challenge
+</h1>
 
 <p>
 Look at the penguin, type its name,
@@ -349,109 +521,202 @@ and see how far you can get!
 🎮 Play
 </button>
 
-<button class="secondary" onclick="goToPage('encyclopedia')">
+<button
+class="secondary"
+onclick="goToPage('encyclopedia')">
+
 📖 Encyclopedia
+
 </button>
 
-<button class="secondary" onclick="goToPage('achievements')">
+<button
+class="secondary"
+onclick="goToPage('achievements')">
+
 🏆 Achievements
+
 </button>
+
 
 <div class="info-grid">
 
 <div class="info-box">
-<h3>🐧 Penguins</h3>
-<p>Identify different penguin species.</p>
+
+<h3>
+🐧 Penguins
+</h3>
+
+<p>
+Identify different penguin species.
+</p>
+
 </div>
+
 
 <div class="info-box">
-<h3>🔥 Streaks</h3>
-<p>Get answers right in a row.</p>
+
+<h3>
+🔥 Streaks
+</h3>
+
+<p>
+Get answers right in a row.
+</p>
+
 </div>
+
 
 <div class="info-box">
-<h3>🏆 Levels</h3>
-<p>Go from Easy to Impossible.</p>
-</div>
+
+<h3>
+🏆 Levels
+</h3>
+
+<p>
+Go from Easy to Impossible.
+</p>
 
 </div>
 
 </div>
+
+</div>
+
 </section>
+
 
 
 <!-- ================= LEVELS ================= -->
 
-<section class="slide" id="levelsPage">
+<section class="slide">
+
 <div class="card">
 
-<h2>Choose Your Level</h2>
+<h2>
+Choose Your Level
+</h2>
 
 <p>
 How good are your penguin-identifying skills?
 </p>
 
+
 <div class="level-grid">
 
-<button class="level easy"
+
+<button
+class="level easy"
 onclick="startGame('Easy')">
+
 🟢 Easy
-<small>Recognizable penguins</small>
+
+<small>
+Recognizable penguins
+</small>
+
 </button>
 
-<button class="level medium"
+
+<button
+class="level medium"
 onclick="startGame('Medium')">
+
 🟡 Medium
-<small>Getting tricky</small>
+
+<small>
+Getting tricky
+</small>
+
 </button>
 
-<button class="level hard"
+
+<button
+class="level hard"
 onclick="startGame('Hard')">
+
 🔴 Hard
-<small>Expert territory</small>
+
+<small>
+Expert territory
+</small>
+
 </button>
 
-<button class="level impossible"
+
+<button
+class="level impossible"
 onclick="startGame('Impossible')">
+
 🟣 Impossible
-<small>True penguin expert</small>
+
+<small>
+True penguin expert
+</small>
+
 </button>
+
 
 </div>
 
-<button class="secondary"
+
+<button
+class="secondary"
 onclick="goToPage('home')">
+
 ⬅ Home
+
 </button>
 
 </div>
+
 </section>
+
 
 
 <!-- ================= QUIZ ================= -->
 
-<section class="slide" id="quizPage">
+<section class="slide">
+
 <div class="card">
 
-<h2 id="levelTitle">🐧 Easy</h2>
+<h2 id="levelTitle">
+🐧 Easy
+</h2>
+
 
 <div class="stats">
 
 <div class="stat">
+
 Question:
-<span id="questionNumber">1</span>
+<span id="questionNumber">
+1
+</span>
+
 </div>
 
+
 <div class="stat">
+
 Score:
-<span id="score">0</span>
+<span id="score">
+0
+</span>
+
 </div>
+
 
 <div class="stat">
-🔥 <span id="streak">0</span>
+
+🔥
+<span id="streak">
+0
+</span>
+
 </div>
 
 </div>
+
 
 <img
 id="penguinImage"
@@ -459,11 +724,13 @@ class="quiz-image"
 alt="Penguin"
 >
 
+
 <p>
 What penguin is this?
 </p>
 
 <br>
+
 
 <input
 id="answer"
@@ -472,40 +739,59 @@ placeholder="Type the penguin's name..."
 autocomplete="off"
 >
 
+
 <br>
+
 
 <button onclick="checkAnswer()">
 ✅ Submit
 </button>
 
-<button class="secondary"
+
+<button
+class="secondary"
 onclick="giveHint()">
+
 💡 Hint
+
 </button>
 
-<div id="feedback"
+
+<div
+id="feedback"
 class="feedback">
 </div>
 
-<div id="hint"
+
+<div
+id="hint"
 class="hint">
 </div>
 
-<button class="secondary"
+
+<button
+class="secondary"
 onclick="goToPage('levels')">
+
 ⬅ Levels
+
 </button>
 
 </div>
+
 </section>
+
 
 
 <!-- ================= ENCYCLOPEDIA ================= -->
 
-<section class="slide" id="encyclopediaPage">
+<section class="slide">
+
 <div class="card">
 
-<h2>📖 Penguin Encyclopedia</h2>
+<h2>
+📖 Penguin Encyclopedia
+</h2>
 
 <p>
 Tap a penguin to read its full Wikipedia article.
@@ -513,107 +799,172 @@ Tap a penguin to read its full Wikipedia article.
 
 <br>
 
+
 <div id="encyclopedia">
 
 <div class="loading">
+
 🐧 Loading penguins...
-</div>
 
 </div>
 
-<button class="secondary"
+</div>
+
+
+<button
+class="secondary"
 onclick="goToPage('home')">
+
 ⬅ Home
+
 </button>
 
 </div>
+
 </section>
+
 
 
 <!-- ================= ACHIEVEMENTS ================= -->
 
-<section class="slide" id="achievementsPage">
+<section class="slide">
+
 <div class="card">
 
-<h2>🏆 Achievements</h2>
+<h2>
+🏆 Achievements
+</h2>
 
-<div id="achievements"></div>
 
-<button class="secondary"
+<div id="achievements">
+</div>
+
+
+<button
+class="secondary"
 onclick="goToPage('home')">
+
 ⬅ Home
+
 </button>
 
 </div>
+
 </section>
+
 
 
 <!-- ================= RESULTS ================= -->
 
-<section class="slide" id="resultsPage">
+<section class="slide">
+
 <div class="card">
 
 <div class="penguin">
 🏆
 </div>
 
+
 <h2 id="resultTitle">
 Level Complete!
 </h2>
 
-<div class="result-score"
+
+<div
+class="result-score"
 id="resultScore">
+
 0
+
 </div>
+
 
 <p>
 Points
 </p>
 
+
 <br>
+
 
 <div class="stats">
 
+
 <div class="stat">
-🐧 <span id="resultQuestions">0</span>
+
+🐧
+<span id="resultQuestions">
+0
+</span>
+
 Questions
+
 </div>
 
+
 <div class="stat">
-💡 <span id="resultHints">0</span>
+
+💡
+<span id="resultHints">
+0
+</span>
+
 Hints
+
 </div>
+
 
 <div class="stat">
-⭐ <span id="resultBest">0</span>
+
+⭐
+<span id="resultBest">
+0
+</span>
+
 Best
-</div>
 
 </div>
+
+
+</div>
+
 
 <br>
 
+
 <button onclick="startGame(currentLevel)">
+
 🔄 Play Again
+
 </button>
 
-<button class="secondary"
+
+<button
+class="secondary"
 onclick="goToPage('levels')">
+
 🎮 Levels
+
 </button>
 
-<button class="secondary"
+
+<button
+class="secondary"
 onclick="goToPage('home')">
+
 🏠 Home
+
 </button>
 
 </div>
+
 </section>
 
+
 </div>
 
 
-<!-- ================= NAV ================= -->
+<!-- ================= BOTTOM NAV ================= -->
 
 <div class="nav">
 
@@ -638,7 +989,9 @@ onclick="goToPage('home')">
 </div>
 
 
+
 <script>
+
 
 /* =====================================================
    PENGUIN DATABASE
@@ -647,134 +1000,214 @@ onclick="goToPage('home')">
 const penguins = [
 
 {
-    name: "Emperor Penguin",
-    aliases: [
-        "emperor",
-        "emperor penguin"
-    ],
-    difficulty: "Easy",
-    wiki: "Emperor_penguin",
-    hint: "It is the largest living penguin species.",
-    fact: "The Emperor Penguin is the largest living penguin species."
+name:"Emperor Penguin",
+
+aliases:[
+"emperor",
+"emperor penguin"
+],
+
+difficulty:"Easy",
+
+wiki:"Emperor_penguin",
+
+hint:
+"It is the largest living penguin species.",
+
+fact:
+"The Emperor Penguin is the largest living penguin species."
 },
 
-{
-    name: "King Penguin",
-    aliases: [
-        "king",
-        "king penguin"
-    ],
-    difficulty: "Easy",
-    wiki: "King_penguin",
-    hint: "Its name sounds like royalty.",
-    fact: "King penguins are the second-largest living penguin species."
-},
 
 {
-    name: "African Penguin",
-    aliases: [
-        "african",
-        "african penguin"
-    ],
-    difficulty: "Easy",
-    wiki: "African_penguin",
-    hint: "This penguin lives in southern Africa.",
-    fact: "African penguins live along the southwestern coast of Africa."
+name:"King Penguin",
+
+aliases:[
+"king",
+"king penguin"
+],
+
+difficulty:"Easy",
+
+wiki:"King_penguin",
+
+hint:
+"Its name sounds like royalty.",
+
+fact:
+"King penguins are the second-largest living penguin species."
 },
 
-{
-    name: "Little Penguin",
-    aliases: [
-        "little",
-        "little penguin",
-        "fairy penguin",
-        "blue penguin"
-    ],
-    difficulty: "Medium",
-    wiki: "Little_penguin",
-    hint: "It is the smallest penguin species.",
-    fact: "Little penguins are also known as fairy penguins."
-},
 
 {
-    name: "Gentoo Penguin",
-    aliases: [
-        "gentoo",
-        "gentoo penguin"
-    ],
-    difficulty: "Medium",
-    wiki: "Gentoo_penguin",
-    hint: "Look for the white markings above the eyes.",
-    fact: "Gentoo penguins have distinctive white markings above their eyes."
+name:"African Penguin",
+
+aliases:[
+"african",
+"african penguin"
+],
+
+difficulty:"Easy",
+
+wiki:"African_penguin",
+
+hint:
+"This penguin lives in southern Africa.",
+
+fact:
+"African penguins live along the southwestern coast of Africa."
 },
 
-{
-    name: "Chinstrap Penguin",
-    aliases: [
-        "chinstrap",
-        "chinstrap penguin"
-    ],
-    difficulty: "Medium",
-    wiki: "Chinstrap_penguin",
-    hint: "It looks like it has a black strap under its chin.",
-    fact: "The black line under its head gives the Chinstrap Penguin its name."
-},
 
 {
-    name: "Adélie Penguin",
-    aliases: [
-        "adelie",
-        "adelie penguin",
-        "adélie",
-        "adélie penguin"
-    ],
-    difficulty: "Hard",
-    wiki: "Ad%C3%A9lie_penguin",
-    hint: "Look for the white ring around the eye.",
-    fact: "Adélie penguins are found around Antarctica."
+name:"Little Penguin",
+
+aliases:[
+"little",
+"little penguin",
+"fairy penguin",
+"blue penguin"
+],
+
+difficulty:"Medium",
+
+wiki:"Little_penguin",
+
+hint:
+"It is the smallest penguin species.",
+
+fact:
+"Little penguins are also known as fairy penguins."
 },
 
-{
-    name: "Macaroni Penguin",
-    aliases: [
-        "macaroni",
-        "macaroni penguin"
-    ],
-    difficulty: "Hard",
-    wiki: "Macaroni_penguin",
-    hint: "It has a bright yellow-orange crest.",
-    fact: "Macaroni penguins have distinctive yellow-orange crest feathers."
-},
 
 {
-    name: "Rockhopper Penguin",
-    aliases: [
-        "rockhopper",
-        "rockhopper penguin",
-        "southern rockhopper",
-        "northern rockhopper"
-    ],
-    difficulty: "Hard",
-    wiki: "Rockhopper_penguin",
-    hint: "It has spiky yellow feathers.",
-    fact: "Rockhopper penguins are small crested penguins with spiky yellow feathers."
+name:"Gentoo Penguin",
+
+aliases:[
+"gentoo",
+"gentoo penguin"
+],
+
+difficulty:"Medium",
+
+wiki:"Gentoo_penguin",
+
+hint:
+"Look for the white markings above the eyes.",
+
+fact:
+"Gentoo penguins have distinctive white markings above their eyes."
 },
 
+
 {
-    name: "Yellow-eyed Penguin",
-    aliases: [
-        "yellow eyed",
-        "yellow-eyed",
-        "yellow eyed penguin",
-        "yellow-eyed penguin"
-    ],
-    difficulty: "Impossible",
-    wiki: "Yellow-eyed_penguin",
-    hint: "Its name gives away something about its eyes.",
-    fact: "Yellow-eyed penguins are native to New Zealand."
+name:"Chinstrap Penguin",
+
+aliases:[
+"chinstrap",
+"chinstrap penguin"
+],
+
+difficulty:"Medium",
+
+wiki:"Chinstrap_penguin",
+
+hint:
+"It looks like it has a black strap under its chin.",
+
+fact:
+"The black line under its head gives the Chinstrap Penguin its name."
+},
+
+
+{
+name:"Adélie Penguin",
+
+aliases:[
+"adelie",
+"adelie penguin",
+"adélie",
+"adélie penguin"
+],
+
+difficulty:"Hard",
+
+wiki:"Ad%C3%A9lie_penguin",
+
+hint:
+"Look for the white ring around the eye.",
+
+fact:
+"Adélie penguins are found around Antarctica."
+},
+
+
+{
+name:"Macaroni Penguin",
+
+aliases:[
+"macaroni",
+"macaroni penguin"
+],
+
+difficulty:"Hard",
+
+wiki:"Macaroni_penguin",
+
+hint:
+"It has a bright yellow-orange crest.",
+
+fact:
+"Macaroni penguins have distinctive yellow-orange crest feathers."
+},
+
+
+{
+name:"Rockhopper Penguin",
+
+aliases:[
+"rockhopper",
+"rockhopper penguin",
+"southern rockhopper",
+"northern rockhopper"
+],
+
+difficulty:"Hard",
+
+wiki:"Rockhopper_penguin",
+
+hint:
+"It has spiky yellow feathers.",
+
+fact:
+"Rockhopper penguins are small crested penguins with spiky yellow feathers."
+},
+
+
+{
+name:"Yellow-eyed Penguin",
+
+aliases:[
+"yellow eyed",
+"yellow-eyed",
+"yellow eyed penguin",
+"yellow-eyed penguin"
+],
+
+difficulty:"Impossible",
+
+wiki:"Yellow-eyed_penguin",
+
+hint:
+"Its name gives away something about its eyes.",
+
+fact:
+"Yellow-eyed penguins are native to New Zealand."
 }
 
 ];
+
 
 
 /* =====================================================
@@ -793,130 +1226,133 @@ let streak = 0;
 
 let hintsUsed = 0;
 
+
 let bestScore =
 Number(
-localStorage.getItem("penguinBestScore") || 0
+localStorage.getItem(
+"penguinBestScore"
+) || 0
 );
+
 
 let completedLevels =
 JSON.parse(
-localStorage.getItem("penguinCompletedLevels") || "[]"
+localStorage.getItem(
+"penguinCompletedLevels"
+) || "[]"
 );
+
 
 
 /* =====================================================
    PAGE SYSTEM
 ===================================================== */
 
-/*
-    IMPORTANT:
-    These are FIXED page numbers.
-
-    0 = Home
-    1 = Levels
-    2 = Quiz
-    3 = Encyclopedia
-    4 = Achievements
-    5 = Results
-*/
-
 const pageNumbers = {
 
-    home: 0,
+home:0,
 
-    levels: 1,
+levels:1,
 
-    quiz: 2,
+quiz:2,
 
-    encyclopedia: 3,
+encyclopedia:3,
 
-    achievements: 4,
+achievements:4,
 
-    results: 5
+results:5
 
 };
 
 
 function goToPage(page) {
 
-    const pageNumber =
-    pageNumbers[page];
+const pageNumber =
+pageNumbers[page];
 
-    if (pageNumber === undefined) {
-        return;
-    }
+if(pageNumber === undefined) {
+return;
+}
 
-    document
-    .getElementById("slides")
-    .style.transform =
-    `translateX(-${pageNumber * 100}vw)`;
+document
+.getElementById("slides")
+.style.transform =
+`translateX(-${pageNumber * 100}vw)`;
 
 }
 
 
+
 /* =====================================================
-   WIKIPEDIA IMAGE API
+   WIKIPEDIA IMAGE
 ===================================================== */
 
 async function getWikipediaImage(articleName) {
 
-    const api =
-    "https://en.wikipedia.org/w/api.php";
+const api =
+"https://en.wikipedia.org/w/api.php";
 
-    const params =
-    new URLSearchParams({
 
-        action: "query",
+const params =
+new URLSearchParams({
 
-        format: "json",
+action:"query",
 
-        formatversion: "2",
+format:"json",
 
-        prop: "pageimages",
+formatversion:"2",
 
-        titles: articleName,
+prop:"pageimages",
 
-        piprop: "thumbnail",
+titles:articleName,
 
-        pithumbsize: "700",
+piprop:"thumbnail",
 
-        origin: "*"
+pithumbsize:"700",
 
-    });
+origin:"*"
 
-    try {
+});
 
-        const response =
-        await fetch(
-            api + "?" + params.toString()
-        );
 
-        const data =
-        await response.json();
+try {
 
-        if (
-            data.query &&
-            data.query.pages &&
-            data.query.pages[0] &&
-            data.query.pages[0].thumbnail
-        ) {
+const response =
+await fetch(
+api + "?" + params.toString()
+);
 
-            return data.query.pages[0]
-                .thumbnail.source;
+const data =
+await response.json();
 
-        }
 
-    } catch (error) {
+if(
+data.query &&
+data.query.pages &&
+data.query.pages[0] &&
+data.query.pages[0].thumbnail
+) {
 
-        console.log(
-            "Wikipedia image error:",
-            error
-        );
+return data.query.pages[0]
+.thumbnail.source;
 
-    }
-
-    return null;
 }
+
+}
+catch(error) {
+
+console.log(
+"Wikipedia image error:",
+error
+);
+
+}
+
+
+return null;
+
+}
+
 
 
 /* =====================================================
@@ -925,20 +1361,26 @@ async function getWikipediaImage(articleName) {
 
 async function loadPenguinImages() {
 
-    for (const penguin of penguins) {
+await Promise.all(
 
-        if (!penguin.image) {
+penguins.map(
+async penguin => {
 
-            penguin.image =
-            await getWikipediaImage(
-                penguin.wiki
-            );
+if(!penguin.image) {
 
-        }
-
-    }
+penguin.image =
+await getWikipediaImage(
+penguin.wiki
+);
 
 }
+
+})
+
+);
+
+}
+
 
 
 /* =====================================================
@@ -947,53 +1389,65 @@ async function loadPenguinImages() {
 
 async function startGame(level) {
 
-    currentLevel = level;
+currentLevel = level;
 
-    questions =
-    penguins.filter(
-        p => p.difficulty === level
-    );
 
-    questions =
-    [...questions].sort(
-        () => Math.random() - 0.5
-    );
+questions =
+penguins.filter(
+p =>
+p.difficulty === level
+);
 
-    currentQuestion = 0;
 
-    score = 0;
+questions =
+[...questions].sort(
+() =>
+Math.random() - 0.5
+);
 
-    streak = 0;
 
-    hintsUsed = 0;
+currentQuestion = 0;
 
-    document
-    .getElementById("levelTitle")
-    .textContent =
-    "🐧 " + level;
+score = 0;
 
-    goToPage("quiz");
+streak = 0;
 
-    document
-    .getElementById("feedback")
-    .textContent =
-    "🐧 Loading penguin...";
+hintsUsed = 0;
 
-    const firstPenguin =
-    questions[0];
 
-    if (!firstPenguin.image) {
+document
+.getElementById("levelTitle")
+.textContent =
+"🐧 " + level;
 
-        firstPenguin.image =
-        await getWikipediaImage(
-            firstPenguin.wiki
-        );
 
-    }
+goToPage("quiz");
 
-    loadQuestion();
+
+document
+.getElementById("feedback")
+.textContent =
+"🐧 Loading penguin...";
+
+
+const firstPenguin =
+questions[0];
+
+
+if(!firstPenguin.image) {
+
+firstPenguin.image =
+await getWikipediaImage(
+firstPenguin.wiki
+);
 
 }
+
+
+loadQuestion();
+
+}
+
 
 
 /* =====================================================
@@ -1002,73 +1456,86 @@ async function startGame(level) {
 
 function loadQuestion() {
 
-    if (
-        currentQuestion >=
-        questions.length
-    ) {
+if(
+currentQuestion >=
+questions.length
+) {
 
-        finishGame();
+finishGame();
 
-        return;
-    }
-
-    const penguin =
-    questions[currentQuestion];
-
-    const image =
-    document.getElementById(
-        "penguinImage"
-    );
-
-    if (penguin.image) {
-
-        image.src =
-        penguin.image;
-
-        image.alt =
-        penguin.name;
-
-    } else {
-
-        image.removeAttribute("src");
-
-        image.alt =
-        "Penguin image unavailable";
-
-    }
-
-    document
-    .getElementById("questionNumber")
-    .textContent =
-    currentQuestion + 1;
-
-    document
-    .getElementById("score")
-    .textContent =
-    score;
-
-    document
-    .getElementById("streak")
-    .textContent =
-    streak;
-
-    document
-    .getElementById("answer")
-    .value = "";
-
-    document
-    .getElementById("feedback")
-    .textContent = "";
-
-    document
-    .getElementById("hint")
-    .textContent = "";
-
-    document
-    .getElementById("answer")
-    .focus();
+return;
 
 }
+
+
+const penguin =
+questions[currentQuestion];
+
+
+const image =
+document.getElementById(
+"penguinImage"
+);
+
+
+if(penguin.image) {
+
+image.src =
+penguin.image;
+
+image.alt =
+penguin.name;
+
+}
+else {
+
+image.removeAttribute("src");
+
+image.alt =
+"Penguin image unavailable";
+
+}
+
+
+document
+.getElementById("questionNumber")
+.textContent =
+currentQuestion + 1;
+
+
+document
+.getElementById("score")
+.textContent =
+score;
+
+
+document
+.getElementById("streak")
+.textContent =
+streak;
+
+
+document
+.getElementById("answer")
+.value = "";
+
+
+document
+.getElementById("feedback")
+.textContent = "";
+
+
+document
+.getElementById("hint")
+.textContent = "";
+
+
+document
+.getElementById("answer")
+.focus();
+
+}
+
 
 
 /* =====================================================
@@ -1077,73 +1544,86 @@ function loadQuestion() {
 
 function checkAnswer() {
 
-    const input =
-    document
-    .getElementById("answer")
-    .value
-    .trim()
-    .toLowerCase();
+const input =
+document
+.getElementById("answer")
+.value
+.trim()
+.toLowerCase();
 
-    if (!input) {
-        return;
-    }
 
-    const penguin =
-    questions[currentQuestion];
+if(!input) {
+return;
+}
 
-    const correct =
-    penguin.aliases.some(
-        alias =>
-        input ===
-        alias.toLowerCase()
-    );
 
-    if (correct) {
+const penguin =
+questions[currentQuestion];
 
-        score +=
-        100 + streak * 25;
 
-        streak++;
+const correct =
+penguin.aliases.some(
+alias =>
+input ===
+alias.toLowerCase()
+);
 
-        document
-        .getElementById("feedback")
-        .textContent =
-        "✅ Correct! 🐧";
 
-        document
-        .getElementById("score")
-        .textContent =
-        score;
+if(correct) {
 
-        document
-        .getElementById("streak")
-        .textContent =
-        streak;
+score +=
+100 + streak * 25;
 
-        currentQuestion++;
+streak++;
 
-        setTimeout(
-            loadQuestion,
-            800
-        );
 
-    } else {
+document
+.getElementById("feedback")
+.textContent =
+"✅ Correct! 🐧";
 
-        streak = 0;
 
-        document
-        .getElementById("feedback")
-        .textContent =
-        "❌ Not quite! Try again.";
+document
+.getElementById("score")
+.textContent =
+score;
 
-        document
-        .getElementById("streak")
-        .textContent =
-        streak;
 
-    }
+document
+.getElementById("streak")
+.textContent =
+streak;
+
+
+currentQuestion++;
+
+
+setTimeout(
+loadQuestion,
+800
+);
 
 }
+else {
+
+streak = 0;
+
+
+document
+.getElementById("feedback")
+.textContent =
+"❌ Not quite! Try again.";
+
+
+document
+.getElementById("streak")
+.textContent =
+streak;
+
+}
+
+}
+
 
 
 /* =====================================================
@@ -1152,21 +1632,25 @@ function checkAnswer() {
 
 function giveHint() {
 
-    if (!questions[currentQuestion]) {
-        return;
-    }
+if(!questions[currentQuestion]) {
+return;
+}
 
-    const penguin =
-    questions[currentQuestion];
 
-    document
-    .getElementById("hint")
-    .textContent =
-    "💡 " + penguin.hint;
+const penguin =
+questions[currentQuestion];
 
-    hintsUsed++;
+
+document
+.getElementById("hint")
+.textContent =
+"💡 " + penguin.hint;
+
+
+hintsUsed++;
 
 }
+
 
 
 /* =====================================================
@@ -1175,68 +1659,78 @@ function giveHint() {
 
 function finishGame() {
 
-    if (score > bestScore) {
 
-        bestScore =
-        score;
+if(score > bestScore) {
 
-        localStorage.setItem(
-            "penguinBestScore",
-            bestScore
-        );
+bestScore = score;
 
-    }
-
-    if (
-        !completedLevels.includes(
-            currentLevel
-        )
-    ) {
-
-        completedLevels.push(
-            currentLevel
-        );
-
-        localStorage.setItem(
-            "penguinCompletedLevels",
-            JSON.stringify(
-                completedLevels
-            )
-        );
-
-    }
-
-    document
-    .getElementById("resultTitle")
-    .textContent =
-    currentLevel +
-    " Complete!";
-
-    document
-    .getElementById("resultScore")
-    .textContent =
-    score;
-
-    document
-    .getElementById("resultQuestions")
-    .textContent =
-    questions.length;
-
-    document
-    .getElementById("resultHints")
-    .textContent =
-    hintsUsed;
-
-    document
-    .getElementById("resultBest")
-    .textContent =
-    bestScore;
-
-    loadAchievements();
-
-    goToPage("results");
+localStorage.setItem(
+"penguinBestScore",
+bestScore
+);
 
 }
+
+
+if(
+!completedLevels.includes(
+currentLevel
+)
+) {
+
+completedLevels.push(
+currentLevel
+);
+
+
+localStorage.setItem(
+"penguinCompletedLevels",
+JSON.stringify(
+completedLevels
+)
+);
+
+}
+
+
+document
+.getElementById("resultTitle")
+.textContent =
+currentLevel +
+" Complete!";
+
+
+document
+.getElementById("resultScore")
+.textContent =
+score;
+
+
+document
+.getElementById("resultQuestions")
+.textContent =
+questions.length;
+
+
+document
+.getElementById("resultHints")
+.textContent =
+hintsUsed;
+
+
+document
+.getElementById("resultBest")
+.textContent =
+bestScore;
+
+
+loadAchievements();
+
+
+goToPage("results");
+
+}
+
 
 
 /* =====================================================
@@ -1245,73 +1739,93 @@ function finishGame() {
 
 async function loadEncyclopedia() {
 
-    const container =
-    document.getElementById(
-        "encyclopedia"
-    );
+const container =
+document.getElementById(
+"encyclopedia"
+);
 
-    container.innerHTML = `
-        <div class="loading">
-            🐧 Getting penguin pictures from Wikipedia...
-        </div>
-    `;
 
-    await loadPenguinImages();
+container.innerHTML = `
 
-    container.innerHTML = "";
+<div class="loading">
 
-    penguins.forEach(
-        penguin => {
+🐧 Getting penguin pictures from Wikipedia...
 
-            const entry =
-            document.createElement("div");
+</div>
 
-            entry.className =
-            "penguin-entry";
+`;
 
-            entry.innerHTML = `
 
-                <img
-                    src="${penguin.image || ""}"
-                    alt="${penguin.name}"
-                >
+await loadPenguinImages();
 
-                <div>
 
-                    <h3>
-                        ${penguin.name}
-                    </h3>
+container.innerHTML = "";
 
-                    <p>
-                        ${penguin.fact}
-                    </p>
 
-                    <small>
-                        🔗 Tap to read more on Wikipedia
-                    </small>
+penguins.forEach(
+penguin => {
 
-                </div>
-            `;
 
-            entry.onclick =
-            function() {
+const entry =
+document.createElement("div");
 
-                window.open(
-                    "https://en.wikipedia.org/wiki/" +
-                    penguin.wiki,
-                    "_blank"
-                );
 
-            };
+entry.className =
+"penguin-entry";
 
-            container.appendChild(
-                entry
-            );
 
-        }
-    );
+entry.innerHTML = `
+
+<img
+src="${penguin.image || ""}"
+alt="${penguin.name}"
+>
+
+<div>
+
+<h3>
+${penguin.name}
+</h3>
+
+<p>
+${penguin.fact}
+</p>
+
+<small>
+🔗 Tap to read more on Wikipedia
+</small>
+
+</div>
+
+`;
+
+
+entry.onclick =
+function() {
+
+window.open(
+
+"https://en.wikipedia.org/wiki/"
++
+penguin.wiki,
+
+"_blank"
+
+);
+
+};
+
+
+container.appendChild(
+entry
+);
 
 }
+
+);
+
+}
+
 
 
 /* =====================================================
@@ -1320,83 +1834,112 @@ async function loadEncyclopedia() {
 
 function loadAchievements() {
 
-    const container =
-    document.getElementById(
-        "achievements"
-    );
+const container =
+document.getElementById(
+"achievements"
+);
 
-    const achievements = [
 
-        {
-            name: "🐣 First Step",
-            text: "Complete your first level.",
-            unlocked:
-            completedLevels.length >= 1
-        },
+const achievements = [
 
-        {
-            name: "🐧 Penguin Explorer",
-            text: "Complete two levels.",
-            unlocked:
-            completedLevels.length >= 2
-        },
+{
 
-        {
-            name: "🏆 Penguin Master",
-            text: "Complete every level.",
-            unlocked:
-            completedLevels.length >= 4
-        },
+name:"🐣 First Step",
 
-        {
-            name: "⭐ High Scorer",
-            text: "Score 500 or more points.",
-            unlocked:
-            bestScore >= 500
-        }
+text:
+"Complete your first level.",
 
-    ];
+unlocked:
+completedLevels.length >= 1
 
-    container.innerHTML = "";
+},
 
-    achievements.forEach(
-        achievement => {
 
-            container.innerHTML += `
+{
 
-                <div class="
-                    achievement
-                    ${
-                        achievement.unlocked
-                        ? "unlocked"
-                        : ""
-                    }
-                ">
+name:"🐧 Penguin Explorer",
 
-                    <h3>
+text:
+"Complete two levels.",
 
-                        ${
-                            achievement.unlocked
-                            ? "✅"
-                            : "🔒"
-                        }
+unlocked:
+completedLevels.length >= 2
 
-                        ${achievement.name}
+},
 
-                    </h3>
 
-                    <p>
-                        ${achievement.text}
-                    </p>
+{
 
-                </div>
+name:"🏆 Penguin Master",
 
-            `;
+text:
+"Complete every level.",
 
-        }
-    );
+unlocked:
+completedLevels.length >= 4
+
+},
+
+
+{
+
+name:"⭐ High Scorer",
+
+text:
+"Score 500 or more points.",
+
+unlocked:
+bestScore >= 500
 
 }
+
+];
+
+
+container.innerHTML = "";
+
+
+achievements.forEach(
+achievement => {
+
+
+container.innerHTML += `
+
+<div class="
+achievement
+${
+achievement.unlocked
+? "unlocked"
+: ""
+}
+">
+
+<h3>
+
+${
+achievement.unlocked
+? "✅"
+: "🔒"
+}
+
+${achievement.name}
+
+</h3>
+
+<p>
+${achievement.text}
+</p>
+
+</div>
+
+`;
+
+}
+
+);
+
+}
+
 
 
 /* =====================================================
@@ -1404,21 +1947,57 @@ function loadAchievements() {
 ===================================================== */
 
 document.addEventListener(
-    "keydown",
-    function(event) {
+"keydown",
+function(event) {
 
-        if (
-            event.key === "Enter" &&
-            document.activeElement.id ===
-            "answer"
-        ) {
+if(
+event.key === "Enter" &&
+document.activeElement.id ===
+"answer"
+) {
 
-            checkAnswer();
+checkAnswer();
 
-        }
+}
 
-    }
+}
 );
+
+
+
+/* =====================================================
+   SERVICE WORKER
+===================================================== */
+
+if(
+"serviceWorker" in navigator
+) {
+
+window.addEventListener(
+"load",
+() => {
+
+navigator.serviceWorker
+.register("./sw.js")
+.then(
+() =>
+console.log(
+"🐧 Penguin app ready!"
+)
+)
+.catch(
+error =>
+console.log(
+"Service worker error:",
+error
+)
+);
+
+}
+);
+
+}
+
 
 
 /* =====================================================
@@ -1431,18 +2010,5 @@ loadEncyclopedia();
 
 </script>
 
-<script>
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js")
-            .then(() => {
-                console.log("Penguin Name Challenge app ready!");
-            })
-            .catch(error => {
-                console.log("Service worker error:", error);
-            });
-    });
-}
-</script>
 </body>
 </html>
