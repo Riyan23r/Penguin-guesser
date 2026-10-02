@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Penguin Name Challenge 🐧</title>
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#071522">
 <style>
 * {
     box-sizing: border-box;
@@ -1427,5 +1429,18 @@ loadEncyclopedia();
 
 </script>
 
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+            .then(() => {
+                console.log("Penguin Name Challenge app ready!");
+            })
+            .catch(error => {
+                console.log("Service worker error:", error);
+            });
+    });
+}
+</script>
 </body>
 </html>
